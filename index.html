@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuvisoft IIoT - Powering Smart, Connected Industries</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter for better typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Gradient background for the entire page */
+            background: linear-gradient(135deg, #0f172a, #1e293b, #0c4a6e); /* Dark blue/slate gradient */
+            color: #e2e8f0; /* Light text for dark background */
+        }
+
+        /* Custom class for glassmorphism effect */
+        .glass-card {
+            background-color: rgba(30, 41, 59, 0.6); /* Slightly transparent slate-800 */
+            border: 1px solid rgba(71, 85, 105, 0.3); /* Lighter border */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1rem; /* rounded-2xl */
+            overflow: hidden; /* To contain inner elements */
+        }
+
+        /* Keyframe animation for hero section background */
+        @keyframes pulse-scan {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-background-animated {
+            background: linear-gradient(90deg, rgba(23, 37, 59, 0.8), rgba(15, 23, 42, 0.8), rgba(23, 37, 59, 0.8));
+            background-size: 200% 200%;
+            animation: pulse-scan 10s ease infinite;
+        }
+
+        /* Basic animation for live insights */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-tile {
+            animation: fade-in-up 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-900 bg-opacity-70 backdrop-blur-md p-4 shadow-lg rounded-b-2xl mx-auto max-w-7xl mt-2">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-blue-400">Cuvisoft <span class="text-white">IIoT</span></div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#platform" class="text-slate-300 hover:text-blue-300 transition-colors duration-300">Platform</a>
+                <a href="#features" class="text-slate-300 hover:text-blue-300 transition-colors duration-300">Features</a>
+                <a href="#use-cases" class="text-slate-300 hover:text-blue-300 transition-colors duration-300">Use Cases</a>
+                <a href="#insights" class="text-slate-300 hover:text-blue-300 transition-colors duration-300">Insights</a>
+                <a href="#contact" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transition-all duration-300">Get Started</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative text-center py-20 md:py-32 rounded-3xl overflow-hidden glass-card mb-16">
+            <!-- Animated Background Overlay -->
+            <div class="absolute inset-0 hero-background-animated opacity-75"></div>
+
+            <div class="relative z-10 p-4 md:p-8">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+                    Connect. Control. <span class="text-blue-400">Evolve.</span>
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-10 opacity-90">
+                    Cuvisoft IIoT transforms industries with real-time device intelligence, edge automation, and cloud-native orchestration.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg">
+                        Start Free Trial
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-transparent border-2 border-blue-500 text-blue-300 hover:bg-blue-500 hover:text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg">
+                        Explore Architecture
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Platform Overview -->
+        <section id="platform" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Our IIoT Platform: The Backbone of Intelligent Operations
+            </h2>
+            <div class="glass-card p-8 md:p-12 text-center">
+                <div class="flex flex-col items-center justify-center space-y-8 md:space-y-0 md:flex-row md:space-x-12 mb-10">
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-microchip text-5xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Edge Devices</h3>
+                        <p class="text-slate-300 text-sm">Sensors, Machines, Controllers</p>
+                    </div>
+                    <i class="fas fa-arrow-right text-4xl text-slate-400 hidden md:block"></i>
+                    <i class="fas fa-arrow-down text-4xl text-slate-400 block md:hidden"></i>
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-gateway text-5xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Edge Gateway</h3>
+                        <p class="text-slate-300 text-sm">Data Aggregation & Pre-processing</p>
+                    </div>
+                    <i class="fas fa-arrow-right text-4xl text-slate-400 hidden md:block"></i>
+                    <i class="fas fa-arrow-down text-4xl text-slate-400 block md:hidden"></i>
+                    <div class="flex flex-col items-center text-center">
+                        <i class="fas fa-cloud text-5xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Cloud Engine</h3>
+                        <p class="text-slate-300 text-sm">Orchestration & Advanced Analytics</p>
+                    </div>
+                </div>
+
+                <div class="text-left md:text-center mt-12">
+                    <h3 class="text-2xl font-bold text-white mb-6">Supported Protocols & Key Layers</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                        <div class="p-4 bg-slate-800 rounded-lg shadow-inner">
+                            <p class="text-blue-300 font-semibold">Protocols:</p>
+                            <ul class="text-slate-400 text-sm list-none p-0 mt-2">
+                                <li>MQTT</li>
+                                <li>OPC-UA</li>
+                                <li>Modbus</li>
+                                <li>LoRaWAN</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded-lg shadow-inner">
+                            <p class="text-blue-300 font-semibold">Layers:</p>
+                            <ul class="text-slate-400 text-sm list-none p-0 mt-2">
+                                <li><i class="fas fa-cogs mr-2"></i>Sensors</li>
+                                <li><i class="fas fa-code-branch mr-2"></i>Data Pipelines</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded-lg shadow-inner">
+                            <p class="text-blue-300 font-semibold">Layers:</p>
+                            <ul class="text-slate-400 text-sm list-none p-0 mt-2">
+                                <li><i class="fas fa-brain mr-2"></i>AI Processing</li>
+                                <li><i class="fas fa-cube mr-2"></i>Digital Twin</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded-lg shadow-inner">
+                            <p class="text-blue-300 font-semibold">Connectivity:</p>
+                            <ul class="text-slate-400 text-sm list-none p-0 mt-2">
+                                <li><i class="fas fa-ethernet mr-2"></i>Wired & Wireless</li>
+                                <li><i class="fas fa-satellite-dish mr-2"></i>Satellite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Core Features Grid -->
+        <section id="features" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Core Features Powering Your Industrial Transformation
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-network-wired text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Edge Device Management</h3>
+                    <p class="text-slate-300">Securely onboard, monitor, and manage thousands of industrial devices at the edge.</p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-chart-line text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Real-Time Monitoring</h3>
+                    <p class="text-slate-300">Gain immediate insights with live data streams and customizable dashboards.</p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-wrench text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Predictive Maintenance</h3>
+                    <p class="text-slate-300">Anticipate equipment failures before they occur, reducing downtime and costs.</p>
+                </div>
+                <!-- Feature Card 4 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-robot text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">AI-Powered Automation</h3>
+                    <p class="text-slate-300">Automate complex industrial processes with intelligent, adaptive algorithms.</p>
+                </div>
+                <!-- Feature Card 5 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-project-diagram text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">IIoT Workflow Builder</h3>
+                    <p class="text-slate-300">Design and deploy custom automation workflows with an intuitive visual editor.</p>
+                </div>
+                <!-- Feature Card 6 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-cube text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Digital Twin Engine</h3>
+                    <p class="text-slate-300">Create virtual replicas of physical assets for simulation and optimization.</p>
+                </div>
+                <!-- Feature Card 7 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-shield-alt text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Secure Protocol Integration</h3>
+                    <p class="text-slate-300">Ensuring data integrity and security across all industrial communication protocols.</p>
+                </div>
+                <!-- Feature Card 8 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-code text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Open API & Webhooks</h3>
+                    <p class="text-slate-300">Seamlessly integrate Cuvisoft IIoT with your existing enterprise systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Industry Use Cases -->
+        <section id="use-cases" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Transforming Industries with Cuvisoft IIoT
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Use Case 1 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-industry text-5xl text-purple-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Smart Manufacturing</h3>
+                    <p class="text-slate-300">Optimize production lines, monitor asset health, and enhance operational efficiency.</p>
+                </div>
+                <!-- Use Case 2 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-plug text-5xl text-green-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Energy Grid Monitoring</h3>
+                    <p class="text-slate-300">Real-time grid health, predictive maintenance for infrastructure, and demand-side management.</p>
+                </div>
+                <!-- Use Case 3 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-seedling text-5xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Connected Agriculture</h3>
+                    <p class="text-slate-300">Precision farming, livestock monitoring, and smart irrigation systems for higher yields.</p>
+                </div>
+                <!-- Use Case 4 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-car-alt text-5xl text-red-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Autonomous Mobility</h3>
+                    <p class="text-slate-300">Fleet management, predictive maintenance for vehicles, and real-time route optimization.</p>
+                </div>
+                <!-- Use Case 5 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-notes-medical text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Healthcare IoT</h3>
+                    <p class="text-slate-300">Remote patient monitoring, asset tracking, and smart hospital infrastructure.</p>
+                </div>
+                <!-- Use Case 6 -->
+                <div class="glass-card p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-building text-5xl text-orange-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Smart Buildings</h3>
+                    <p class="text-slate-300">Energy management, predictive maintenance for HVAC, and occupancy monitoring.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Live Insights Section -->
+        <section id="insights" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Real-Time Insights & Dashboards
+            </h2>
+            <div class="glass-card p-8 md:p-12">
+                <p class="text-lg text-slate-300 text-center mb-10">
+                    Experience the power of real-time data with simulated IIoT dashboards.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dashboard Tile 1: Temperature -->
+                    <div class="glass-card p-6 text-center animated-tile" style="animation-delay: 0s;">
+                        <i class="fas fa-thermometer-half text-4xl text-cyan-400 mb-3"></i>
+                        <h4 class="text-xl font-semibold text-white mb-2">Machine Temperature</h4>
+                        <p class="text-5xl font-bold text-blue-300">72°C</p>
+                        <p class="text-slate-400 text-sm mt-1">Status: Normal</p>
+                    </div>
+                    <!-- Dashboard Tile 2: Vibration -->
+                    <div class="glass-card p-6 text-center animated-tile" style="animation-delay: 0.1s;">
+                        <i class="fas fa-wave-square text-4xl text-lime-400 mb-3"></i>
+                        <h4 class="text-xl font-semibold text-white mb-2">Vibration Level</h4>
+                        <p class="text-5xl font-bold text-green-300">0.8 mm/s</p>
+                        <p class="text-slate-400 text-sm mt-1">Status: Stable</p>
+                    </div>
+                    <!-- Dashboard Tile 3: Energy Consumption -->
+                    <div class="glass-card p-6 text-center animated-tile" style="animation-delay: 0.2s;">
+                        <i class="fas fa-bolt text-4xl text-orange-400 mb-3"></i>
+                        <h4 class="text-xl font-semibold text-white mb-2">Energy Consumption</h4>
+                        <p class="text-5xl font-bold text-yellow-300">125 kWh</p>
+                        <p class="text-slate-400 text-sm mt-1">Status: On Target</p>
+                    </div>
+                    <!-- Dashboard Tile 4: Asset Uptime -->
+                    <div class="glass-card p-6 text-center animated-tile" style="animation-delay: 0.3s;">
+                        <i class="fas fa-hourglass-half text-4xl text-indigo-400 mb-3"></i>
+                        <h4 class="text-xl font-semibold text-white mb-2">Asset Uptime</h4>
+                        <p class="text-5xl font-bold text-purple-300">99.8%</p>
+                        <p class="text-slate-400 text-sm mt-1">Last 24 Hours</p>
+                    </div>
+                    <!-- Dashboard Tile 5: Production Rate -->
+                    <div class="glass-card p-6 text-center animated-tile" style="animation-delay: 0.4s;">
+                        <i class="fas fa-boxes text-4xl text-pink-400 mb-3"></i>
+                        <h4 class="text-xl font-semibold text-white mb-2">Production Rate</h4>
+                        <p class="text-5xl font-bold text-red-300">1200 units/hr</p>
+                        <p class="text-slate-400 text-sm mt-1">Current Output</p>
+                    </div>
+                    <!-- Dashboard Tile 6: Error Rate -->
+                    <div class="glass-card p-6 text-center animated-tile" style="animation-delay: 0.5s;">
+                        <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-3"></i>
+                        <h4 class="text-xl font-semibold text-white mb-2">Error Rate</h4>
+                        <p class="text-5xl font-bold text-orange-400">0.02%</p>
+                        <p class="text-slate-400 text-sm mt-1">Alerts: None</p>
+                    </div>
+                </div>
+                <!-- Placeholder for Chart.js like graph -->
+                <div class="mt-12 p-6 glass-card animated-tile" style="animation-delay: 0.6s;">
+                    <h4 class="text-xl font-semibold text-white mb-4">Historical Data Trend (Simulated)</h4>
+                    <div class="w-full h-48 bg-slate-800 rounded-lg flex items-end justify-around p-4">
+                        <!-- Bars representing data points -->
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 60%; animation: bar-grow 1s ease-out forwards;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 75%; animation: bar-grow 1s ease-out forwards 0.1s;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 50%; animation: bar-grow 1s ease-out forwards 0.2s;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 85%; animation: bar-grow 1s ease-out forwards 0.3s;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 70%; animation: bar-grow 1s ease-out forwards 0.4s;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 90%; animation: bar-grow 1s ease-out forwards 0.5s;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 65%; animation: bar-grow 1s ease-out forwards 0.6s;"></div>
+                        <div class="w-8 bg-blue-500 rounded-t-lg" style="height: 80%; animation: bar-grow 1s ease-out forwards 0.7s;"></div>
+                    </div>
+                    <style>
+                        @keyframes bar-grow {
+                            from { height: 0; }
+                            to { } /* Uses the inline style height */
+                        }
+                    </style>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Innovation Spotlight -->
+        <section id="innovation" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Innovation at the Core
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Innovation Card 1 -->
+                <div class="glass-card p-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-brain text-5xl text-cyan-300 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Edge AI Deployment</h3>
+                    <p class="text-slate-300">Deploy advanced AI/ML models directly on edge devices for real-time, low-latency decision making.</p>
+                </div>
+                <!-- Innovation Card 2 -->
+                <div class="glass-card p-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-leaf text-5xl text-lime-300 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Bio-inspired Algorithms</h3>
+                    <p class="text-slate-300">Leverage self-optimizing and adaptive algorithms inspired by natural systems for robust performance.</p>
+                </div>
+                <!-- Innovation Card 3 -->
+                <div class="glass-card p-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-radiation text-5xl text-red-300 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Self-healing Machine Networks</h3>
+                    <p class="text-slate-300">Intelligent networks that automatically detect and recover from anomalies and failures.</p>
+                </div>
+                <!-- Innovation Card 4 -->
+                <div class="glass-card p-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-vector-square text-5xl text-purple-300 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Advanced Digital Twin Modeling</h3>
+                    <p class="text-slate-300">Sophisticated tools for creating highly accurate and dynamic digital replicas of physical assets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Cuvisoft Ecosystem Integration -->
+        <section id="ecosystem" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Cuvisoft Ecosystem Integration
+            </h2>
+            <div class="glass-card p-8 md:p-12 text-center">
+                <p class="text-lg text-slate-300 mb-8">
+                    IIoT is the neural network of the Cuvisoft ecosystem, seamlessly connecting all components.
+                </p>
+                <div class="flex flex-col items-center justify-center space-y-8 md:space-y-0 md:flex-row md:space-x-12 text-center">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-tools text-5xl text-yellow-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Cuvisoft Engineering Suite</h3>
+                        <p class="text-slate-400 text-sm">Design & Development</p>
+                    </div>
+                    <i class="fas fa-arrows-alt-h text-4xl text-slate-400 hidden md:block"></i>
+                    <i class="fas fa-arrows-alt-v text-4xl text-slate-400 block md:hidden"></i>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-cloud-upload-alt text-5xl text-pink-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Cuvisoft SaaS Engines</h3>
+                        <p class="text-slate-400 text-sm">Cloud-Native Applications</p>
+                    </div>
+                    <i class="fas fa-arrows-alt-h text-4xl text-slate-400 hidden md:block"></i>
+                    <i class="fas fa-arrows-alt-v text-4xl text-slate-400 block md:hidden"></i>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-hdd text-5xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white">Cuvisoft IIoT Core</h3>
+                        <p class="text-slate-400 text-sm">Device & Data Hub</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Why Cuvisoft IIoT? -->
+        <section id="why-cuvisoft" class="py-16 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">
+                Why Choose Cuvisoft IIoT?
+            </h2>
+            <div class="glass-card p-8 md:p-12">
+                <ul class="space-y-6 text-lg text-slate-300">
+                    <li class="flex items-start">
+                        <i class="fas fa-cogs text-blue-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <span class="font-semibold text-white">High Scalability:</span> Deploy across 100K+ devices and environments with ease.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-puzzle-piece text-blue-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <span class="font-semibold text-white">Modular Integration:</span> Seamlessly connect with popular tools like n8n, Node-RED, and Grafana.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-cloud-check text-blue-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <span class="font-semibold text-white">Secure & Cloud-Native:</span> Robust security from Edge to Cloud with reliable data synchronization.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-industry text-blue-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <span class="font-semibold text-white">Built for Industry 5.0:</span> Designed to empower human-machine collaboration and intelligent automation.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-handshake text-blue-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <span class="font-semibold text-white">Dedicated Support:</span> Our expert team is ready to assist you at every step of your IIoT journey.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 9. Call to Action -->
+        <section id="contact" class="py-16 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-10">
+                Ready to Transform Your Industry?
+            </h2>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg">
+                    Get Started Today
+                </a>
+                <a href="#" class="px-8 py-4 bg-transparent border-2 border-blue-500 text-blue-300 hover:bg-blue-500 hover:text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg">
+                    Schedule a Demo
+                </a>
+                <a href="#" class="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg">
+                    Join Developer Community
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 bg-opacity-70 backdrop-blur-md text-slate-400 text-center py-8 mt-16 rounded-t-2xl mx-auto max-w-7xl mb-2">
+        <p>&copy; 2025 Cuvisoft IIoT. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
